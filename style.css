@@ -20,10 +20,9 @@ align-items: center;
 justify-content: center;
 }
 .cabecalho_imagem{
-width: 5%;
-display: flex;
-justify-content: flex-start;
-align-items: center;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
 }
 .titulo_site{
 padding: 50px;
