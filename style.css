@@ -19,12 +19,15 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-.cabecalho-imagem{
-width: 1%;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-}
+.cabecalho-imagem {
+  width: 80px;
+  height: 80px;
+  position: fixed; /* fixa na tela */
+  top: 10px;       /* distância do topo */
+  left: 10px;      /* distância da esquerda */
+  object-fit: cover; /* mantém proporção e preenche quadrado */
+  border-radius: 5px; /* opcional: cantos arredondados */
+}.
 .titulo_site{
 padding: 50px;
 text-align: center;
