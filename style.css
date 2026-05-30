@@ -7,7 +7,7 @@ body{
 font-family: "Poppins", sans-serif;
 }
 header{
-background-color: #62b2f3;
+background-color: #ff5e00;
 color: white;
 width: 100%;
 padding: 20px;
@@ -20,7 +20,7 @@ align-items: center;
 justify-content: center;
 }
 .cabecalho_imagem{
-width: 10%;
+width: 15%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
