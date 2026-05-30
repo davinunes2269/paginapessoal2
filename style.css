@@ -19,10 +19,11 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-.cabecalho_imagem{
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
+.cabecalho-imagem{
+width: 6%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
 }
 .titulo_site{
 padding: 50px;
