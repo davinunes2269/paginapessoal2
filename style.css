@@ -9,8 +9,8 @@ body{
 }
 
 header{
-    background-color: #ff5e01;
-    color: white;
+    background-color: #53d2f8;
+    color: rgb(255, 255, 255);
     padding: 20px;
 }
 
@@ -21,12 +21,12 @@ header{
 }
 
 .cabecalho_imagem{
-    width: 180px;
+    width: 500px;
 }
 
 .titulo_site{
     text-align: center;
-    font-size: 32px;
+    font-size: 40px;
 }
 
 .sociais{
@@ -35,22 +35,47 @@ header{
 }
 
 .sociais img{
-    width: 40px;
+    width: 50px;
 }
 
-.banner1{
+.banner1 {
     display: flex;
-    justify-content: center;
-    padding: 30px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.escola-image{
-    max-width: 400px;
-    width: 100%;
+.escola-image {
+    width: 80%;
+    max-width: 1200px;
+}
+
+.txtbanner {
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.titulo-sobre{
+    font-size: 45px;
+    margin-top: -200px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sobre-mim{
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.8;
+    color: #333;
+    padding: 0 20px;
+    margin-top: 10px;
 }
 
 .estudante{
-    background-color: #faae43;
+    background-color: #88ff00;
     padding: 40px 20px;
 }
 
