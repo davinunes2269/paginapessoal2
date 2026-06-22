@@ -50,6 +50,7 @@ header{
 }
 
 .txtbanner {
+    color: white;
     margin-top: 20px;
     font-size: 40px;
     text-align: center;
@@ -75,7 +76,7 @@ header{
 }
 
 .estudante{
-    background-color: #88ff00;
+    background-color: #53d2f8;
     padding: 40px 20px;
 }
 
@@ -111,7 +112,7 @@ header{
 
 .escola{
     background: linear-gradient(#40A2E3,#7FC2EF);
-    color: white;
+    color: #53d2f8;
     text-align: center;
     padding: 30px;
 }
