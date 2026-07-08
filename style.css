@@ -75,6 +75,14 @@ header{
     margin-top: 10px;
 }
 
+.Meu-Bairro {
+    background-color: white;
+}
+
+.txtbairro {
+    align-items: center;
+}
+
 .estudante{
     background-color: #53d2f8;
     padding: 40px 20px;
@@ -112,7 +120,7 @@ header{
 
 .escola{
     background: linear-gradient(#40A2E3,#7FC2EF);
-    color: #53d2f8;
+    color: #ffffff;
     text-align: center;
     padding: 30px;
 }
