@@ -84,6 +84,17 @@ header{
     min-height: 100vh;
 }
 
+.video {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
 .txtbairro {
     color: #53d2f8;
     text-align: center;
