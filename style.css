@@ -152,3 +152,30 @@ header{
     color: white;
     text-decoration: none;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #53d2f8;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+ul li a:hover {
+  background-color: black;
+}
