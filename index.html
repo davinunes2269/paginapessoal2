@@ -1,126 +1,431 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Davi Nunes Wudarski</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="cabecalho-itens">
-        <img class="cabecalho_imagem" src="img/davibanner.png" alt="Logo da Página">
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
-        <h1 class="titulo_site">Davi Nunes Wudarski</h1>
+    <header class="cabecalho">
 
-        <div class="sociais">
-            <img src="img/whatsapp.png" alt="WhatsApp">
-            <img src="img/facebook.png" alt="Facebook">
-            <img src="img/instagram.png" alt="Instagram">
+        <div class="cabecalho-itens">
+
+            <a href="index.html" class="logo">
+                <img src="img/davibanner.png" alt="Davi Nunes Wudarski">
+            </a>
+
+            <div class="titulo-area">
+                <span class="pequeno-texto">PORTFÓLIO PESSOAL</span>
+                <h1>Davi Nunes Wudarski</h1>
+                <p>Desenvolvimento • Tecnologia • Criatividade</p>
+            </div>
+
+            <div class="sociais">
+
+                <a href="#" title="WhatsApp">
+                    <img src="img/whatsapp.png" alt="WhatsApp">
+                </a>
+
+                <a href="#" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="#" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+
+            </div>
+
         </div>
+
     </header>
 
-    <ul>
-  <li><a href="home.html">Home</a></li>
-  <li><a href="news.asp">News</a></li>
-  <li><a href="contact.asp">Contact</a></li>
-  <li><a href="about.asp">About</a></li>
-</ul>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <!-- =========================
+         MENU
+    ========================== -->
 
-    <section class="banner1">
-        <img class="escola-image" src="img/davi wudarsk.png" alt="Banner">
-    <h2 class="titulo-sobre">Sobre Mim</h2>
+    <nav class="navbar">
 
-    <p class="sobre-mim">
-    Meu nome é <strong>Davi Nunes Wudarski</strong> e sou apaixonado por tecnologia,
-    desenvolvimento web e design. Estou sempre buscando aprender novas habilidades
-    e transformar ideias em projetos criativos.
+        <ul>
 
-    Além da programação, participo ativamente da minha igreja, contribuindo com
-    comunicação, mídia e evangelismo. Meu objetivo é crescer profissionalmente,
-    impactar pessoas de forma positiva e construir um futuro sólido através do
-    conhecimento, da dedicação e da fé.
-    <br>
-    <br>
-    <br>
-    </p>
-    </section>
+            <li>
+                <a href="index.html" class="ativo">Início</a>
+            </li>
 
-    <section class="Meu-Bairro">
-        <h1 class="txtbairro">Meu Bairro</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28797.971875740346!2d-49.41520796090319!3d-25.54682023916336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd02e9d613c101%3A0xb1f34933aba3e602!2sCapela%20Velha%2C%20Arauc%C3%A1ria%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1785960378811!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <br>
-        <br>
-        <h1 class="txtbairro">LOZOFAN destruindo na Ranked,, o melhor video que eu ja vi!!!</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/sd4eLCq5TGw?si=CYzwN-Z06dD35mIJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
+            <li>
+                <a href="home.html">PC</a>
+            </li>
 
-    <section class="estudante">
-        <h2 class="estudante_titulo">Pokedex</h2>
+            <li>
+                <a href="amigos.html">Friends</a>
+            </li>
 
-        <div class="estudantes_todos">
+            <li>
+                <a href="contato.html">Contato</a>
+            </li>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/gui.png" alt="Guilherme">
-                <h3 class="estudante-nome">Guilherme</h3>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-brilho"></div>
+
+            <div class="hero-conteudo">
+
+                <span class="hero-tag">
+                    👋 OLÁ, EU SOU O DAVI
+                </span>
+
+                <h2>
+                    Transformando ideias em
+                    <span>projetos incríveis.</span>
+                </h2>
+
+                <p>
+                    Sou apaixonado por tecnologia, desenvolvimento web e design.
+                    Estou sempre aprendendo, criando e buscando transformar ideias
+                    em experiências digitais.
+                </p>
+
+                <div class="hero-botoes">
+
+                    <a href="#sobre" class="btn-principal">
+                        Conheça minha história
+                        <span>↓</span>
+                    </a>
+
+                    <a href="contato.html" class="btn-secundario">
+                        Entre em contato
+                        <span>→</span>
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/apoti.png" alt="Apoti">
-                <h3 class="estudante-nome">Apoti</h3>
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+                    <span>STATUS</span>
+
+                    <div class="status">
+                        <span></span>
+                        Online
+                    </div>
+                </div>
+
+                <div class="codigo">
+
+                    <span class="codigo-roxo">const</span>
+                    <span class="codigo-branco"> davi </span>
+                    <span class="codigo-azul">=</span>
+                    <span class="codigo-amarelo"> {</span>
+
+                    <br>
+
+                    <span class="espaco">
+                        nome:
+                        <b>"Davi Nunes"</b>,
+                    </span>
+
+                    <br>
+
+                    <span class="espaco">
+                        foco:
+                        <b>"Web"</b>,
+                    </span>
+
+                    <br>
+
+                    <span class="espaco">
+                        criatividade:
+                        <b>true</b>
+                    </span>
+
+                    <br>
+
+                    <span class="codigo-amarelo">};</span>
+
+                </div>
 
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/joao.png" alt="João">
-                <h3 class="estudante-nome">Massaru</h3>
+        </section>
+
+
+        <!-- =========================
+             SOBRE MIM
+        ========================== -->
+
+        <section class="sobre" id="sobre">
+
+            <div class="sobre-container">
+
+                <div class="sobre-imagem">
+
+                    <div class="imagem-glow"></div>
+
+                    <img src="img/davi wudarsk.png" alt="Davi">
+
+                </div>
+
+                <div class="sobre-conteudo">
+
+                    <span class="secao-tag">SOBRE MIM</span>
+
+                    <h2>
+                        Muito prazer,
+                        <span>sou o Davi.</span>
+                    </h2>
+
+                    <p>
+                        Meu nome é <strong>Davi Nunes Wudarski</strong> e sou
+                        apaixonado por tecnologia, desenvolvimento web e design.
+                        Estou sempre buscando aprender novas habilidades e
+                        transformar ideias em projetos criativos.
+                    </p>
+
+                    <p>
+                        Além da programação, participo ativamente da minha igreja,
+                        contribuindo com comunicação, mídia e evangelismo.
+                    </p>
+
+                    <p>
+                        Meu objetivo é crescer profissionalmente, impactar pessoas
+                        de forma positiva e construir um futuro sólido através do
+                        conhecimento, da dedicação e da fé.
+                    </p>
+
+                    <div class="sobre-dados">
+
+                        <div>
+                            <strong>💻</strong>
+                            <span>Desenvolvimento</span>
+                        </div>
+
+                        <div>
+                            <strong>🎨</strong>
+                            <span>Design</span>
+                        </div>
+
+                        <div>
+                            <strong>🚀</strong>
+                            <span>Projetos</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/ruan.png" alt="Ruan">
-                <h3 class="estudante-nome">Ruan</h3>
+        </section>
+
+
+        <!-- =========================
+             MEU BAIRRO
+        ========================== -->
+
+        <section class="bairro">
+
+            <div class="secao-cabecalho">
+
+                <span class="secao-tag">MEU CANTINHO</span>
+
+                <h2>
+                    Meu <span>Bairro</span>
+                </h2>
+
+                <p>
+                    Um pouco do lugar onde vivo.
+                </p>
+
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/paiva.png" alt="André">
-                <h3 class="estudante-nome">André</h3>
+            <div class="bairro-container">
+
+                <div class="mapa-card">
+
+                    <div class="card-titulo">
+                        <span>📍</span>
+                        Capela Velha
+                    </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28797.971875740346!2d-49.41520796090319!3d-25.54682023916336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd02e9d613c101%3A0xb1f34933aba3e602!2sCapela%20Velha%2C%20Arauc%C3%A1ria%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1785960378811!5m2!1spt-BR!2sbr"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+
+                </div>
+
+                <div class="video-card">
+
+                    <div class="card-titulo">
+                        <span>🎮</span>
+                        Um vídeo que eu curto
+                    </div>
+
+                    <h3>
+                        LOZOFAN destruindo na Ranked
+                    </h3>
+
+                    <p>
+                        O melhor vídeo que eu já vi!!!
+                    </p>
+
+                    <iframe
+                        src="https://www.youtube.com/embed/sd4eLCq5TGw?si=CYzwN-Z06dD35mIJ"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/marcos.png" alt="Marcos">
-                <h3 class="estudante-nome">Marcos</h3>
+        </section>
+
+
+        <!-- =========================
+             POKEDEX
+        ========================== -->
+
+        <section class="pokedex">
+
+            <div class="secao-cabecalho">
+
+                <span class="secao-tag">MINHA GALERA</span>
+
+                <h2>
+                    <span>Pokédex</span>
+                </h2>
+
+                <p>
+                    Os personagens que fazem parte dessa história 😂
+                </p>
+
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/lucas.png" alt="Lucas">
-                <h3 class="estudante-nome">Lucas cabeça</h3>
+            <div class="estudantes-todos">
+
+                <div class="estudante-div">
+                    <img src="img/gui.png" alt="Guilherme">
+                    <h3>Guilherme</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/apoti.png" alt="Apoti">
+                    <h3>Apoti</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/joao.png" alt="Massaru">
+                    <h3>Massaru</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/ruan.png" alt="Ruan">
+                    <h3>Ruan</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/paiva.png" alt="André">
+                    <h3>André</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/marcos.png" alt="Marcos">
+                    <h3>Marcos</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/lucas.png" alt="Lucas">
+                    <h3>Lucas cabeça</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/bruno.png" alt="Bruno">
+                    <h3>Bruno</h3>
+                </div>
+
+                <div class="estudante-div">
+                    <img src="img/playba.png" alt="Playba">
+                    <h3>Playba</h3>
+                </div>
+
             </div>
 
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/bruno.png" alt="Bruno">
-                <h3 class="estudante-nome">Bruno</h3>
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="rodape">
+
+        <div class="rodape-conteudo">
+
+            <div>
+
+                <span class="secao-tag">VAMOS CONVERSAR?</span>
+
+                <h2>
+                    Tem uma ideia?
+                    <span>Me chama!</span>
+                </h2>
+
+                <p>
+                    Entre em contato para trocar uma ideia.
+                </p>
+
             </div>
-            <div class="estudante-div">
-                <img class="estudante-imagem" src="img/playba.png" alt="playba">
-                <h3 class="estudante-nome">Playba</h3>
-            </div>
+
+            <a href="contato.html" class="btn-principal">
+                Falar comigo
+                <span>→</span>
+            </a>
+
         </div>
-    </section>
 
-    <footer class="escola">
-        <img class="logo_rodape" src="img/whatsapp.png" alt="Logo">
+        <div class="rodape-final">
 
-        <h2 class="escola-titulo">
-            Mais informações entre em contato<br>
-            <strong>41 9999-9999</strong>
-        </h2>
+            <span>© 2026 Davi Nunes Wudarski</span>
+
+            <span>
+                Feito com ☕ & código
+            </span>
+
+        </div>
+
     </footer>
 
 </body>
+
 </html>

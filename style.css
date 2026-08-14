@@ -1,181 +1,2478 @@
-*{
+/* =========================
+   RESET
+========================= */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: Poppins, sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-    background-color: #53d2f8;
-    color: rgb(255, 255, 255);
-    padding: 20px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: white;
 }
 
-.cabecalho-itens{
+
+/* =========================
+   CORES
+========================= */
+
+:root {
+    --azul: #39d9ff;
+    --azul-escuro: #07111f;
+    --azul-card: #102238;
+    --texto: #ffffff;
+    --texto-cinza: #91a2b8;
+    --borda: rgba(255,255,255,.08);
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 50% -100%,
+            rgba(57,217,255,.3),
+            transparent 60%
+        ),
+        #07111f;
+
+    border-bottom: 1px solid var(--borda);
+    padding: 25px 7%;
+}
+
+.cabecalho-itens {
+    max-width: 1300px;
+    margin: auto;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-.cabecalho_imagem{
-    width: 500px;
+.logo img {
+    width: 400px;
+    display: block;
 }
 
-.titulo_site{
+.titulo-area {
     text-align: center;
-    font-size: 40px;
 }
 
-.sociais{
+.pequeno-texto {
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.titulo-area h1 {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.titulo-area p {
+    color: var(--texto-cinza);
+    font-size: 13px;
+}
+
+.sociais {
     display: flex;
     gap: 10px;
 }
 
-.sociais img{
-    width: 50px;
-}
+.sociais a {
+    width: 45px;
+    height: 45px;
 
-.banner1 {
-    color: #53d2f8;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.04);
+
+    transition: .3s;
 }
 
-.escola-image {
-    width: 80%;
-    max-width: 1200px;
+.sociais a:hover {
+    border-color: var(--azul);
+    background: rgba(57,217,255,.1);
+    transform: translateY(-4px);
 }
 
-.txtbanner {
-    margin-top: 20px;
-    font-size: 40px;
-    text-align: center;
-    margin-top: -100px;
+.sociais img {
+    width: 25px;
 }
 
-.titulo-sobre{
-    font-size: 45px;
-    margin-top: -200px;
-    margin-bottom: 20px;
-    text-align: center;
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid var(--borda);
+
+    background: rgba(7,17,31,.85);
+    backdrop-filter: blur(15px);
 }
 
-.sobre-mim{
+.navbar ul {
+    list-style: none;
+
     max-width: 1000px;
     margin: auto;
-    text-align: center;
-    font-size: 25px;
-    line-height: 1.8;
-    color: #333;
-    padding: 0 20px;
-    margin-top: 10px;
-}
-
-.Meu-Bairro {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-.video {
-    width: 100%;
-    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: white;
 }
 
-.txtbairro {
-    color: #53d2f8;
-    text-align: center;
-    margin-bottom: 20px;
+.navbar li {
+    list-style: none;
 }
 
-.estudante{
-    background-color: #53d2f8;
-    padding: 40px 20px;
+.navbar a {
+    display: block;
+
+    padding: 18px 25px;
+
+    color: #91a2b8;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: .3s;
 }
 
-.estudante_titulo{
-    text-align: center;
-    margin-bottom: 30px;
+.navbar a:hover,
+.navbar a.ativo {
+    color: var(--azul);
 }
 
-.estudantes_todos{
+.navbar a::after {
+    content: "";
+
+    display: block;
+
+    width: 0;
+    height: 2px;
+
+    margin: 5px auto 0;
+
+    background: var(--azul);
+
+    transition: .3s;
+}
+
+.navbar a:hover::after,
+.navbar a.ativo::after {
+    width: 25px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 700px;
+
+    padding: 120px 8%;
+
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(0,191,255,.12),
+            transparent 35%
+        );
+}
+
+.hero-brilho {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -200px;
+    right: -100px;
+
+    background: var(--azul);
+
+    filter: blur(180px);
+
+    opacity: .15;
+
+    pointer-events: none;
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+.hero-tag,
+.secao-tag {
+    color: var(--azul);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: .95;
+
+    margin: 25px 0;
+
+    letter-spacing: -3px;
+}
+
+.hero h2 span {
+    color: var(--azul);
+}
+
+.hero p {
+    max-width: 600px;
+
+    color: var(--texto-cinza);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.hero-botoes {
+    display: flex;
+    gap: 15px;
     flex-wrap: wrap;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-flex;
+
+    align-items: center;
     justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px 22px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn-principal {
+    background: var(--azul);
+    color: #06111e;
+}
+
+.btn-principal:hover {
+    background: white;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(57,217,255,.2);
+}
+
+.btn-secundario {
+    color: white;
+
+    border: 1px solid var(--borda);
+
+    background: rgba(255,255,255,.04);
+}
+
+.btn-secundario:hover {
+    border-color: var(--azul);
+
+    background: rgba(57,217,255,.08);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   CARD DE CÓDIGO
+========================= */
+
+.hero-card {
+    position: relative;
+    z-index: 2;
+
+    width: 420px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.045);
+
+    border: 1px solid var(--borda);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4);
+
+    backdrop-filter: blur(20px);
+}
+
+.hero-card-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--borda);
+
+    color: #536579;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #9baabd;
+
+    font-size: 12px;
+}
+
+.status span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #39e58c;
+
+    box-shadow: 0 0 15px #39e58c;
+}
+
+.codigo {
+    margin-top: 25px;
+
+    color: #91a2b8;
+
+    font-family: monospace;
+
+    font-size: 16px;
+
+    line-height: 2;
+}
+
+.codigo-roxo {
+    color: #c792ea;
+}
+
+.codigo-azul {
+    color: #89ddff;
+}
+
+.codigo-amarelo {
+    color: #ffcb6b;
+}
+
+.codigo-branco {
+    color: white;
+}
+
+.codigo b {
+    color: #c3e88d;
+    font-weight: normal;
+}
+
+.espaco {
+    padding-left: 25px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre {
+    position: relative;
+
+    padding: 120px 8%;
+
+    background: #0a1728;
+
+    overflow: hidden;
+}
+
+.sobre-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 400px 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.sobre-imagem {
+    position: relative;
+}
+
+.sobre-imagem img {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--borda);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.4);
+}
+
+.imagem-glow {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: var(--azul);
+
+    filter: blur(100px);
+
+    opacity: .2;
+
+    top: 30%;
+    left: 20%;
+}
+
+.sobre-conteudo h2,
+.secao-cabecalho h2 {
+    font-size: clamp(40px, 5vw, 60px);
+
+    line-height: 1;
+
+    margin: 20px 0;
+}
+
+.sobre-conteudo h2 span,
+.secao-cabecalho h2 span {
+    color: var(--azul);
+}
+
+.sobre-conteudo p {
+    color: var(--texto-cinza);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.sobre-conteudo strong {
+    color: white;
+}
+
+.sobre-dados {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.sobre-dados div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--borda);
+
+    background: rgba(255,255,255,.035);
+
+    color: #91a2b8;
+
+    font-size: 13px;
+}
+
+.sobre-dados strong {
+    font-size: 18px;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao-cabecalho {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.secao-cabecalho p {
+    color: var(--texto-cinza);
+}
+
+
+/* =========================
+   BAIRRO
+========================= */
+
+.bairro {
+    padding: 120px 8%;
+
+    background: #07111f;
+}
+
+.bairro-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
     gap: 30px;
 }
 
-.estudante-div{
+.mapa-card,
+.video-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid var(--borda);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.card-titulo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+.mapa-card iframe {
+    width: 100%;
+
+    height: 350px;
+
+    border: none;
+
+    border-radius: 12px;
+}
+
+.video-card h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.video-card p {
+    color: var(--texto-cinza);
+
+    margin-bottom: 20px;
+}
+
+.video-card iframe {
+    width: 100%;
+
+    height: 300px;
+
+    border: none;
+
+    border-radius: 12px;
+}
+
+
+/* =========================
+   POKEDEX
+========================= */
+
+.pokedex {
+    padding: 120px 8%;
+
+    background: #0a1728;
+}
+
+.estudantes-todos {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.estudante-div {
+    position: relative;
+
+    padding: 25px;
+
     text-align: center;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--borda);
+
+    background: rgba(255,255,255,.035);
+
+    overflow: hidden;
+
+    transition: .3s;
 }
 
-.estudante-imagem{
-    width: 150px;
+.estudante-div::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -50px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--azul);
+
+    filter: blur(70px);
+
+    opacity: 0;
+
+    transition: .3s;
+}
+
+.estudante-div:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--azul);
+
+    background: rgba(57,217,255,.06);
+}
+
+.estudante-div:hover::before {
+    opacity: .25;
+}
+
+.estudante-div img {
+    position: relative;
+    z-index: 2;
+
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #1a334c;
+
+    transition: .3s;
+}
+
+.estudante-div:hover img {
+    border-color: var(--azul);
+
+    transform: scale(1.05);
+}
+
+.estudante-div h3 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 15px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+    padding: 80px 8% 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(57,217,255,.12),
+            transparent 45%
+        ),
+        #07111f;
+}
+
+.rodape-conteudo {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+.rodape h2 {
+    font-size: 45px;
+
+    margin: 15px 0;
+}
+
+.rodape h2 span {
+    color: var(--azul);
+}
+
+.rodape p {
+    color: var(--texto-cinza);
+}
+
+.rodape-final {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--borda);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #536579;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+   USADO NO CONTATO
+========================= */
+
+.menu-voltar {
+    position: absolute;
+
+    top: 30px;
+    left: 8%;
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.menu-voltar li {
+    list-style: none;
+}
+
+.menu-voltar li a {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    color: #a9b8c9;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border: 1px solid rgba(255,255,255,.1);
+
     border-radius: 10px;
+
+    background: rgba(255,255,255,.04);
+
+    transition: .3s;
 }
 
-.estudante-nome{
+.menu-voltar li a:hover {
+    color: white;
+
+    border-color: var(--azul);
+
+    background: rgba(57,217,255,.1);
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.contato {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 100px 8% 30px;
+
+    overflow: hidden;
+
+    background: #07111f;
+
+    color: white;
+}
+
+.contato-bg {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #00bfff;
+
+    filter: blur(180px);
+
+    opacity: .18;
+
+    top: -150px;
+    right: -100px;
+
+    pointer-events: none;
+}
+
+.contato-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.contato-tag {
+    color: var(--azul);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.contato-info h1 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: .95;
+
+    margin: 20px 0;
+}
+
+.contato-info h1 span {
+    color: var(--azul);
+}
+
+.contato-info > p {
+    max-width: 520px;
+
+    color: var(--texto-cinza);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+.contato-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.contato-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border: 1px solid var(--borda);
+
+    background: rgba(255,255,255,.035);
+
+    border-radius: 14px;
+
+    transition: .3s;
+}
+
+.contato-item:hover {
+    transform: translateX(8px);
+
+    border-color: var(--azul);
+
+    background: rgba(57,217,255,.08);
+}
+
+.icone {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    background: #102238;
+}
+
+.contato-item small {
+    display: block;
+
+    color: #718198;
+
+    margin-bottom: 3px;
+}
+
+.contato-item strong {
+    font-size: 15px;
+}
+
+.seta {
+    margin-left: auto;
+
+    color: var(--azul);
+
+    font-size: 22px;
+}
+
+.contato-card {
+    position: relative;
+
+    padding: 38px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.055);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
+
+    backdrop-filter: blur(20px);
+}
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.brilho {
+    color: var(--azul);
+
+    font-size: 25px;
+}
+
+.contato-card h2 {
+    font-size: 36px;
+
+    margin: 35px 0;
+
+    line-height: 1.1;
+}
+
+.contato-card h2 span {
+    color: var(--azul);
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #a9b8c9;
+
+    font-size: 13px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    outline: none;
+
+    background: rgba(0,0,0,.2);
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px rgba(57,217,255,.08);
+}
+
+.input-group textarea {
+    height: 110px;
+
+    resize: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #536579;
+}
+
+.contato-card button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    background: var(--azul);
+
+    color: #06111e;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.contato-card button:hover {
+    background: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(57,217,255,.2);
+}
+
+.contato-card button span {
+    margin-left: 10px;
+
+    font-size: 20px;
+}
+
+.contato-footer {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: 80px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #536579;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .cabecalho-itens {
+        flex-direction: column;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        padding-top: 90px;
+
+        text-align: center;
+    }
+
+    .hero-conteudo {
+        max-width: 700px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+
+        max-width: 700px;
+    }
+
+    .bairro-container {
+        grid-template-columns: 1fr;
+    }
+
+    .estudantes-todos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .contato-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        padding: 20px;
+    }
+
+    .cabecalho_imagem,
+    .logo img {
+        width: 150px;
+    }
+
+    .titulo-area h1 {
+        font-size: 23px;
+    }
+
+    .sociais img {
+        width: 20px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        padding: 13px 10px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 80px 6%;
+    }
+
+    .hero h2 {
+        font-size: 50px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-card {
+        padding: 20px;
+    }
+
+    .codigo {
+        font-size: 13px;
+    }
+
+    .sobre,
+    .bairro,
+    .pokedex {
+        padding: 80px 6%;
+    }
+
+    .sobre-conteudo h2,
+    .secao-cabecalho h2 {
+        font-size: 42px;
+    }
+
+    .estudantes-todos {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-card,
+    .video-card {
+        padding: 15px;
+    }
+
+    .mapa-card iframe {
+        height: 300px;
+    }
+
+    .video-card iframe {
+        height: 220px;
+    }
+
+    .rodape {
+        padding: 60px 6% 25px;
+    }
+
+    .rodape h2 {
+        font-size: 38px;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .contato {
+        padding: 80px 6% 25px;
+    }
+
+    .contato-info h1 {
+        font-size: 52px;
+    }
+
+    .contato-card {
+        padding: 25px;
+    }
+
+    .contato-footer {
+        margin-top: 50px;
+
+        gap: 10px;
+
+        flex-direction: column;
+    }
+
+    .menu-voltar {
+        left: 6%;
+
+        top: 20px;
+    }
+}
+
+/* =========================
+   PÁGINA DO PC
+========================= */
+
+.pc-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(57,217,255,.12),
+            transparent 35%
+        ),
+        #07111f;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   VOLTAR
+========================= */
+
+.pc-voltar {
+    position: fixed;
+
+    top: 25px;
+    left: 7%;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   HERO PC
+========================= */
+
+.pc-hero {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 8% 80px;
+
+    overflow: hidden;
+}
+
+.pc-hero-brilho {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #00cfff;
+
+    filter: blur(180px);
+
+    opacity: .15;
+
+    top: -250px;
+
+    pointer-events: none;
+}
+
+.pc-hero-conteudo {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+}
+
+.pc-hero h1 {
+    font-size: clamp(65px, 9vw, 120px);
+
+    line-height: .9;
+
+    letter-spacing: -5px;
+
+    margin: 20px 0;
+}
+
+.pc-hero h1 span {
+    color: var(--azul);
+}
+
+.pc-hero p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: var(--texto-cinza);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.pc-status {
+    position: absolute;
+
+    right: 8%;
+    bottom: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #718198;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.pc-status span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #39e58c;
+
+    box-shadow:
+        0 0 15px #39e58c;
+}
+
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+.pc-config {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 8% 120px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.pc-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.pc-card {
+    position: relative;
+
+    min-height: 420px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.02)
+        );
+
+    border: 1px solid var(--borda);
+
+    overflow: hidden;
+
+    transition: .4s;
+}
+
+.pc-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    top: -100px;
+    right: -80px;
+
+    background: var(--azul);
+
+    filter: blur(90px);
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+.pc-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(57,217,255,.5);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+}
+
+.pc-card:hover::before {
+    opacity: .12;
+}
+
+
+/* =========================
+   CARD TOPO
+========================= */
+
+.pc-card-top {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.pc-numero {
+    color: #536579;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.pc-icone {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(57,217,255,.08);
+
+    border: 1px solid rgba(57,217,255,.12);
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.pc-imagem {
+    position: relative;
+
+    z-index: 2;
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 15px 0;
+}
+
+.pc-imagem img {
+    width: 145px;
+    height: 145px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #1b3b57;
+
+    box-shadow:
+        0 0 0 8px rgba(57,217,255,.03),
+        0 15px 40px rgba(0,0,0,.4);
+
+    transition: .4s;
+}
+
+.pc-card:hover .pc-imagem img {
+    transform: scale(1.08);
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 30px rgba(57,217,255,.15);
+}
+
+
+/* =========================
+   SEM IMAGEM
+========================= */
+
+.pc-sem-imagem {
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #1b3b57;
+
+    background:
+        radial-gradient(
+            circle,
+            #142f48,
+            #091523
+        );
+
+    color: var(--azul);
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.pc-categoria {
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--azul);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.pc-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 25px;
+
     margin: 10px 0;
 }
 
-.estudante-icone{
-    width: 35px;
-    margin: 5px;
+.pc-card p {
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--texto-cinza);
+
+    font-size: 13px;
+
+    line-height: 1.6;
 }
 
-.escola{
-    background: linear-gradient(#40A2E3,#7FC2EF);
-    color: #ffffff;
-    text-align: center;
-    padding: 30px;
+.pc-linha {
+    position: relative;
+
+    z-index: 2;
+
+    height: 1px;
+
+    background: var(--borda);
+
+    margin: 20px 0;
 }
 
-.logo_rodape{
-    height: 80px;
-    margin-bottom: 15px;
+.pc-detalhes {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #536579;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
 }
 
-.link{
+
+/* =========================
+   CARD DESTAQUE
+========================= */
+
+.pc-card-destaque {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,217,255,.12),
+            rgba(255,255,255,.025)
+        );
+
+    border-color: rgba(57,217,255,.2);
+}
+
+.pc-destaque-conteudo {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 70px;
+}
+
+.pc-card-destaque h3 {
+    font-size: 32px;
+
+    margin: 15px 0;
+}
+
+.pc-card-destaque p {
+    max-width: 250px;
+
+    font-size: 14px;
+}
+
+.pc-status-grande {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 35px;
+
+    color: #536579;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.pc-status-grande span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #39e58c;
+
+    box-shadow:
+        0 0 15px #39e58c;
+}
+
+.pc-status-grande strong {
     color: white;
-    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: normal;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #53d2f8;
-  display: flex;
-  justify-content: center;
+
+/* =========================
+   FINAL
+========================= */
+
+.pc-final {
+    position: relative;
+
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(57,217,255,.15),
+            transparent 45%
+        );
+
+    border-top: 1px solid var(--borda);
 }
 
-ul li {
-  float: left;
+.pc-final h2 {
+    font-size: clamp(45px, 6vw, 70px);
+
+    margin: 20px 0;
 }
 
-ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 24px;
+.pc-final h2 span {
+    color: var(--azul);
 }
 
-ul li a:hover {
-  background-color: black;
+.pc-final p {
+    color: var(--texto-cinza);
+
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVO PC
+========================= */
+
+@media (max-width: 900px) {
+
+    .pc-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .pc-status {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pc-hero {
+        min-height: 450px;
+
+        padding:
+            120px 6%
+            70px;
+    }
+
+    .pc-hero h1 {
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .pc-hero p {
+        font-size: 15px;
+    }
+
+    .pc-config {
+        padding:
+            60px 6%
+            80px;
+    }
+
+    .pc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pc-card {
+        min-height: 390px;
+    }
+
+    .pc-final {
+        padding: 80px 6%;
+    }
+
+}
+
+/* ========================================
+   PÁGINA AMIGOS / POKEDEX
+======================================== */
+
+.amigos-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(57,217,255,.12),
+            transparent 35%
+        ),
+        #07111f;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.amigos-voltar {
+    position: fixed;
+
+    top: 25px;
+    left: 7%;
+
+    z-index: 100;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.amigos-hero {
+    position: relative;
+
+    min-height: 480px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 8% 80px;
+
+    overflow: hidden;
+}
+
+.amigos-brilho {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #00cfff;
+
+    filter: blur(180px);
+
+    opacity: .15;
+
+    top: -250px;
+
+    pointer-events: none;
+}
+
+.amigos-hero-conteudo {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+}
+
+.amigos-hero h1 {
+    font-size: clamp(65px, 9vw, 120px);
+
+    line-height: .9;
+
+    letter-spacing: -5px;
+
+    margin: 20px 0;
+}
+
+.amigos-hero h1 span {
+    color: #39d9ff;
+}
+
+.amigos-hero p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #91a2b8;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   LISTA
+======================================== */
+
+.amigos-lista {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        60px 6%
+        120px;
+}
+
+
+/* ========================================
+   GRID DOS AMIGOS
+======================================== */
+
+.amigos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.amigo-card {
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.018)
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    overflow: hidden;
+
+    transition:
+        transform .4s,
+        border-color .4s,
+        box-shadow .4s;
+}
+
+
+/* brilho do card */
+
+.amigo-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    right: -100px;
+
+    background: #39d9ff;
+
+    filter: blur(100px);
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+.amigo-card:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(57,217,255,.5);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.4);
+}
+
+.amigo-card:hover::before {
+    opacity: .13;
+}
+
+
+/* ========================================
+   NÚMERO
+======================================== */
+
+.amigo-numero {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    color: #536579;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   IMAGEM
+======================================== */
+
+.amigo-imagem-container {
+    position: relative;
+
+    height: 200px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.amigo-brilho {
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #39d9ff;
+
+    filter: blur(55px);
+
+    opacity: .08;
+
+    transition: .4s;
+}
+
+.amigo-card:hover .amigo-brilho {
+    opacity: .2;
+}
+
+.amigo-imagem {
+    position: relative;
+
+    z-index: 2;
+
+    width: 155px;
+    height: 155px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #1b3b57;
+
+    box-shadow:
+        0 0 0 8px rgba(57,217,255,.025),
+        0 20px 40px rgba(0,0,0,.45);
+
+    transition: .4s;
+}
+
+.amigo-card:hover .amigo-imagem {
+    transform: scale(1.07);
+
+    border-color: #39d9ff;
+
+    box-shadow:
+        0 0 30px rgba(57,217,255,.2);
+}
+
+
+/* ========================================
+   INFORMAÇÕES
+======================================== */
+
+.amigo-info {
+    position: relative;
+
+    z-index: 3;
+
+    text-align: center;
+}
+
+.amigo-info > span {
+    color: #39d9ff;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.amigo-info h3 {
+    margin: 8px 0;
+
+    font-size: 25px;
+}
+
+.amigo-info p {
+    margin: 0 auto;
+
+    max-width: 260px;
+
+    color: #718198;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   RODAPÉ DO CARD
+======================================== */
+
+.amigo-footer {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 14px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    color: #536579;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.amigo-footer strong {
+    color: #39e58c;
+
+    font-size: 9px;
+
+    text-shadow:
+        0 0 10px rgba(57,229,140,.4);
+}
+
+
+/* ========================================
+   CARD DESTAQUE
+======================================== */
+
+.amigo-destaque {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(57,217,255,.10),
+            rgba(255,255,255,.02)
+        );
+
+    border-color:
+        rgba(57,217,255,.2);
+}
+
+
+/* ========================================
+   FINAL
+======================================== */
+
+.amigos-final {
+    padding:
+        120px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(57,217,255,.15),
+            transparent 45%
+        );
+}
+
+.amigos-final h2 {
+    font-size:
+        clamp(45px, 6vw, 70px);
+
+    margin: 20px 0;
+}
+
+.amigos-final h2 span {
+    color: #39d9ff;
+}
+
+.amigos-final p {
+    color: #718198;
+
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+    .amigos-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .amigos-hero {
+        min-height: 420px;
+
+        padding:
+            110px 6%
+            60px;
+    }
+
+    .amigos-hero h1 {
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .amigos-hero p {
+        font-size: 15px;
+    }
+
+    .amigos-lista {
+        padding:
+            50px 6%
+            80px;
+    }
+
+    .amigos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .amigo-card {
+        min-height: 390px;
+    }
+
+    .amigos-final {
+        padding: 80px 6%;
+    }
+
 }
